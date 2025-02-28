@@ -31,12 +31,32 @@ def log_study():
         print(f"Studying {subject}: {task}. Press Enter to start the session.")
         input()
         start_time = time.time()
-        print("Session started. Press Enter to finish.")
+        last_pause_time = start_time
+        total_paused_time = 0
+        is_paused = False
 
-        # Wait for user to finish
-        input()
+        print("Session started. Press Enter to pause/resume or 'q' to finish.")
+
+        while True:
+            user_input = input()
+            if user_input.lower() == 'q':
+                break
+
+            if is_paused:
+                # Resume the session
+                total_paused_time += time.time() - last_pause_time
+                is_paused = False
+                print("Session resumed. Press Enter to pause or 'q' to finish.")
+            else:
+                # Pause the session
+                last_pause_time = time.time()
+                is_paused = True
+                print("Session paused. Press Enter to resume or 'q' to finish.")
+
+        # Calculate total duration
         end_time = time.time()
-        duration_minutes = math.ceil((end_time - start_time) / 60)  # Round up to nearest minute
+        total_duration = end_time - start_time - total_paused_time
+        duration_minutes = math.ceil(total_duration / 60)  # Round up to nearest minute
 
         # Get productivity score
         while True:
