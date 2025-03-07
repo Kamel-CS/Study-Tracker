@@ -5,7 +5,7 @@ import math
 import os
 
 # List of your subjects
-SUBJECTS = ["Project", "ICN", "IIS", "LT", "HT", "IDB", "OOP2"]
+SUBJECTS = ["Project", "ICN", "IIS", "LT", "GT", "IDB", "OOP2"]
 
 # Create directories if they don't exist
 os.makedirs("data/logs", exist_ok=True)

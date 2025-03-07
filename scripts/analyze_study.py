@@ -8,7 +8,7 @@ SUBJECT_COLORS = {
     "ICN": "green",
     "IIS": "red",
     "LT": "purple",
-    "HT": "orange",
+    "GT": "orange",
     "IDB": "cyan",
     "OOP2": "magenta",
 }
@@ -60,8 +60,7 @@ average_productivity = weekly_log["Productivity"].mean()
 study_by_subject = weekly_log.groupby("Subject")["Duration (min)"].sum()
 
 # Generate weekly summary text
-weekly_summary_text = f"""
-# Weekly Study Summary ({start_date} to {end_date})
+weekly_summary_text = f"""# Weekly Study Summary ({start_date} to {end_date})
 
 **Total study time:** {total_study_time} minutes
 
@@ -114,8 +113,7 @@ else:
     global_summary_text = "# Global Study Summary\n\n"
 
 # Append this week's data to the global summary
-global_summary_text += f"""
-## Week of {start_date} to {end_date}
+global_summary_text += f"""## Week of {start_date} to {end_date}
 
 **Total study time:** {total_study_time} minutes
 
