@@ -11,6 +11,7 @@ SUBJECT_COLORS = {
     "GT": "orange",
     "IDB": "cyan",
     "OOP2": "magenta",
+    "Other": "gray",
 }
 
 # Create directories if they don't exist
